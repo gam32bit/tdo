@@ -1,6 +1,10 @@
 #pdfplumber
 import pdfplumber
 import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 pdf = pdfplumber.open("tdostats.pdf")
 
@@ -33,6 +37,13 @@ def create_totals_table(rows, cols):
     return df
         
 tdos_df = create_totals_table(get_totals(pdf), totals_columns)
+
+x = list(tdos_df["Year"])
+y = list(tdos_df["ECOs"])
+z = list(tdos_df["Total_LOC_Events"])
+
+plt.plot(x, y)
+plt.show()
 
 
 
