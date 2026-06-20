@@ -43,7 +43,7 @@ loc_df = create_table(get_total(pdf), loc_columns)
 
 print(loc_df)
 
-plt.style.use('seaborn-dark')
+plt.style.use('seaborn-v0_8-dark')
 plt.plot(loc_df['Total_Events'])
 plt.ylabel('Events Per Month', fontsize=12.0)
 plt.title('Loss of Custody Events', fontsize=16.0, pad=10.0)
