@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Batch everything into a single PR instead of one per dependency,
+    # so updates arrive as one weekly review rather than a trickle of alerts.
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
